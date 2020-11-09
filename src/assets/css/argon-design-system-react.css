@@ -13006,7 +13006,7 @@ textarea[resize="horizontal"] {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: transparent !important;
+  background-color: white !important;
   border: 0;
   box-shadow: none; }
   .navbar-transparent .navbar-brand {
@@ -15331,7 +15331,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .headroom--not-top {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  background-color: #172b4d !important;
+  background-color: white !important;
   box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1); }
 
 .ct-clipboard {

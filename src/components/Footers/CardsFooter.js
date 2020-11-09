@@ -37,30 +37,6 @@ class CardsFooter extends React.Component {
     return (
       <>
         <footer className="footer has-cards">
-          <Container className="container-lg">
-            <Row>
-              <Col className="mb-5 mb-md-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/landing-page">
-                    <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
-                    />
-                  </Link>
-                </Card>
-              </Col>
-              <Col className="mb-5 mb-lg-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/profile-page">
-                    <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
-                    />
-                  </Link>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
@@ -131,20 +107,21 @@ class CardsFooter extends React.Component {
               </Col>
             </Row>
             <hr />
-            <Row className="align-items-center justify-content-md-between">
-              <Col md="6">
+            <Row className="align-items-center justify-content-md-between text-center">
+              <Col md="12">
                 <div className="copyright">
-                  © {new Date().getFullYear()}{" "}
+                  © Copyright{" "}{new Date().getFullYear()}{" "}
+                  All Rights Reserved | Design and developed by{" "}
                   <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
-                    target="_blank"
+                    href="#"
+                    // target="_blank"
                   >
-                    Creative Tim
+                    ArcReaactors
                   </a>
                   .
                 </div>
               </Col>
-              <Col md="6">
+              {/* <Col md="6">
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
@@ -179,7 +156,7 @@ class CardsFooter extends React.Component {
                     </NavLink>
                   </NavItem>
                 </Nav>
-              </Col>
+              </Col> */}
             </Row>
           </Container>
         </footer>

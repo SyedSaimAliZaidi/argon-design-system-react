@@ -39,6 +39,9 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
+import logo from "assets/img/logo.png"
+import { Hidden } from "@material-ui/core";
+
 class DemoNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
@@ -72,12 +75,24 @@ class DemoNavbar extends React.Component {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                <img
-                  alt="..."
-                  src={require("assets/img/brand/argon-react-white.png")}
-                />
-              </NavbarBrand>
+              <Hidden xsDown>
+                <NavbarBrand  to="/" tag={Link}>
+                  <img
+                    alt="..."
+                    src={logo}
+                    style={{height:80}}
+                  />
+                </NavbarBrand>
+              </Hidden>
+              <Hidden smUp>
+                <NavbarBrand to="/" tag={Link}>
+                  <img
+                    alt="..."
+                    src={logo}
+                    style={{height:80}}
+                  />
+                </NavbarBrand>
+              </Hidden>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
               </button>
@@ -94,7 +109,8 @@ class DemoNavbar extends React.Component {
                       <Link to="/">
                         <img
                           alt="..."
-                          src={require("assets/img/brand/argon-react.png")}
+                          src={logo}
+                          style={{height:50}}
                         />
                       </Link>
                     </Col>
@@ -106,7 +122,7 @@ class DemoNavbar extends React.Component {
                     </Col>
                   </Row>
                 </div>
-                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                <Nav className="navbar-nav-hover align-items-lg-center ml-lg-auto" navbar>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
@@ -191,8 +207,8 @@ class DemoNavbar extends React.Component {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                </Nav>
-                <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                {/* </Nav>
+                <Nav className="align-items-lg-center ml-lg-auto" navbar> */}
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -273,6 +289,7 @@ class DemoNavbar extends React.Component {
                     </Button>
                   </NavItem>
                 </Nav>
+              
               </UncontrolledCollapse>
             </Container>
           </Navbar>
