@@ -19,82 +19,49 @@ import {
   Col,
   CardHeader
 } from "reactstrap";
-import PromoImage from "assets/img/theme/promo-1.png"
-import CardImage from "assets/img/theme/img-1-1200x1000.jpg"
-import CardImage2 from "assets/img/ill/ill-2.svg"
 
-import BG from "assets/img/theme/bg3 (1).jpg"
-
-import team1 from "assets/img/theme/team-1-800x800.jpg"
-import team2 from "assets/img/theme/team-2-800x800.jpg"
-import team3 from "assets/img/theme/team-3-800x800.jpg"
-import team4 from "assets/img/theme/team-4-800x800.jpg"
+import img1 from "assets/img/services/analysis.png"
+import img2 from "assets/img/services/management.png"
+import img3 from "assets/img/services/teamwork.png"
 
 export default function Services() {
-    return (
-        <section className="section section-lg">
-            <Container>
-              <Row className="row-grid align-items-center  text-center">
-                
-                <Col className="order-md-1" md="12">
-                  <div className="">
-                    {/* <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                      <i className="ni ni-settings-gear-65" />
-                    </div> */}
-                    <h3>Our Best Services</h3>
-                    {/* <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p> */}
-                    <Row className="row-grid py-5">
+  const data = [
+    { img: img1, heading: "Strategy & Top-Line Transformation", description: "We support you in designing and executing a winning strategy that allows you to create sustainable growth."},
+    { img: img2, heading: "Leadership, Change & Organization", description: "We help corporate leaders develop the organizational strength, agility, and leanness needed to translate strategy into tangible results."},
+    { img: img3, heading: "Operations & Performance Transformation", description: "Today's dynamics present extraordinary opportunities to transform your operations for competitive advantage."}
+  ]
+  return (
+    <section className="section section-lg">
+      <Container>
+        <Row className="row-grid align-items-center  text-center">                
+          <Col  md="12">
+            <div className="">
+              <h3 className="display-3">Our Best Services</h3>
+              <Row className="row-grid py-5">
+                {
+                  data.map((item,index)=>{
+                    return(
                       <Col md="4">
                         <div>
-                          <div className="icon icon-lg icon-shape icon-shape-success shadow mb-5">
-                            <i className="ni ni-settings-gear-65" />
+                          <div className="py-3">
+                            <img src={item.img} style={{width:100}}/>
                           </div>
-                          <h6 className="mb-0">
-                            Strategy & Top-Line Transformation
-                          </h6>
+                          <h5>
+                            {item.heading}
+                          </h5>
                           <p>
-                          We support you in designing and executing a winning strategy that allows you to create sustainable growth.
+                            {item.description}
                           </p>
-                        </div>
-                    
-                      </Col>
-                      <Col md="4">
-                        <div>
-                          <div className="icon icon-lg icon-shape icon-shape-success shadow mb-5">
-                            <i className="ni ni-settings-gear-65" />
-                          </div>
-
-                          <h6 className="mb-0">Leadership, Change & Organization</h6>
-                          <p>
-                          We help corporate leaders develop the organizational strength, agility, and leanness needed to translate strategy into tangible results.
-                          </p>
-                        </div>
-
-                      </Col>
-                      <Col md="4">
-                        <div className="icon icon-lg icon-shape icon-shape-success shadow mb-5">
-                          <i className="ni ni-settings-gear-65" />
-                        </div>
-                        <div>
-                          <h6 className="mb-0">
-                            Operations & Performance Transformation
-                          </h6>
-                          <p>
-                          Today's dynamics present extraordinary opportunities to transform your operations for competitive advantage.
-                          </p>
-
-                        </div>
-                      </Col>
-                    </Row>
-                   </div>
-                </Col>
+                        </div>                   
+                      </Col>    
+                    )
+                  })
+                }
               </Row>
-            </Container>
-          </section>
-          
-    )
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>       
+  )
 }

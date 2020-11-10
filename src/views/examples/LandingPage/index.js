@@ -61,6 +61,7 @@ import Work from "./sections/Work"
 import Services from "./sections/Services"
 import Team from "./sections/Team"
 import Contact from "./sections/Contact"
+import SimpleFooter from "components/Footers/SimpleFooter";
 
 class Landing extends React.Component {
   state = {};
@@ -75,14 +76,14 @@ class Landing extends React.Component {
         <DemoNavbar />
         <main ref="main">
           <Hero/>
-          <Announcements/>
+          {/* <Announcements/> */}
           <About/>
           <Work/>
           <Services/>
           <Team/>
           <Contact/>
         </main>
-        <CardsFooter />
+        <SimpleFooter />
       </>
     );
   }

@@ -32,13 +32,13 @@ import team4 from "assets/img/theme/team-4-800x800.jpg"
 
 export default function About() {
     return (
-        <section className="section  section-lg">
+        <section className="sectionv section-lg">
             <Container>
               <Row className="justify-content-center text-center">
                 <Col lg="8">
-                  <h3>About Us</h3>
-                  <h5>WE CARE ABOUT YOUR BUSINESS</h5>
-                  <p className="description mt-4">
+                  <h3 className="display-3">About Us</h3>
+                  <h5 className="">WE CARE ABOUT YOUR BUSINESS</h5>
+                  <p className=" mt-4">
                     Wherever you are in the world, in whatever industry, you can rely on our international teams of experts to provide specialized solutions to make your business faster, simpler and more efficient.
                     <br/>
                     <br/>

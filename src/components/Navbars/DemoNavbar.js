@@ -42,6 +42,11 @@ import {
 import logo from "assets/img/logo.png"
 import { Hidden } from "@material-ui/core";
 
+const links = [
+  {label:'Home',link:"/"},
+  {label:'About Us',link:"/profile-page"},
+  // {label:'Contact Us',link:"/"},
+]
 class DemoNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
@@ -89,7 +94,7 @@ class DemoNavbar extends React.Component {
                   <img
                     alt="..."
                     src={logo}
-                    style={{height:80}}
+                    style={{height:50}}
                   />
                 </NavbarBrand>
               </Hidden>
@@ -123,7 +128,24 @@ class DemoNavbar extends React.Component {
                   </Row>
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center ml-lg-auto" navbar>
-                  <UncontrolledDropdown nav>
+                
+                {
+                  links.map((item,index)=>{
+                    return(
+                      <NavItem key={index}>
+                        <NavLink
+                          className="nav-link"
+                        >
+                          <Link to={item.link} style={{color:"#32325D"}}>
+                            {item.label}
+                          </Link>
+                        </NavLink>
+                      </NavItem>  
+                    )
+                  })
+                }
+                
+                  {/* <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Components</span>
@@ -206,10 +228,10 @@ class DemoNavbar extends React.Component {
                         Register
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>
+                  </UncontrolledDropdown> */}
                 {/* </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar> */}
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink
                       className="nav-link-icon"
                       href="https://www.facebook.com/creativetim"
@@ -287,7 +309,7 @@ class DemoNavbar extends React.Component {
                         Download
                       </span>
                     </Button>
-                  </NavItem>
+                  </NavItem> */}
                 </Nav>
               
               </UncontrolledCollapse>

@@ -1,57 +1,97 @@
+import React from 'react';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import MobileStepper from '@material-ui/core/MobileStepper';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
 
-import React from "react";
-// nodejs library that concatenates classes
-import classnames from "classnames";
+import carousel1 from "assets/img/Carousel/carousel1.jpg"
+import carousel2 from "assets/img/Carousel/carousel2.jpg"
+import carousel3 from "assets/img/Carousel/carousel3.jpg"
 
-// reactstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
-import BG from "assets/img/theme/bg3 (1).jpg"
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-export default function Hero() {
-    return (
+const tutorialSteps = [
+  {
+    label: 'San Francisco – Oakland Bay Bridge, United States',
+    imgPath: carousel1
+  },
+  {
+    label: 'Bird',
+    imgPath: carousel2
+  },
+  {
+    label: 'Bali, Indonesia',
+    imgPath: carousel3
 
-<div className="position-relative">
-            {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
-              <div className="shape" >
-                <img src={BG} />
-              </div>
-              <Container className="py-lg-md d-flex">
-                <div className="col px-0 py-5">
-                  <Row>
-                    <Col lg="6">
-                      <h1 className="display-3 text-white">
-                        A beautiful Design System{" "}
-                        <span>completed with examples</span>
-                      </h1>
-                      <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
-                      </p>
-                    </Col>
-                  </Row>
-                </div>
-                
-              </Container>
-              
-            </section>
-            {/* 1st Hero Variation */}
-          </div>
-                    
-    )
+  },
+];
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: '100%',
+    flexGrow: 1,
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    height: 50,
+    paddingLeft: theme.spacing(4),
+    backgroundColor: theme.palette.background.default,
+  },
+  img: {
+    height: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    overflow: 'hidden',
+    width: '100%',
+  }
+}));
+
+function SwipeableTextMobileStepper() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = tutorialSteps.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
+
+  return (
+    <section className="">
+
+      <div className={classes.root}>
+        <AutoPlaySwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+        >
+          {tutorialSteps.map((step, index) => (
+            <div key={step.label}>
+              {Math.abs(activeStep - index) <= 2 ? (
+                <img className={classes.img} src={step.imgPath} alt={step.label} />
+              ) : null}
+            </div>
+          ))}
+        </AutoPlaySwipeableViews>
+        
+      </div>
+    </section>
+  );
 }
+
+export default SwipeableTextMobileStepper;

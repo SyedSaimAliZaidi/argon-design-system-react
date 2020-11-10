@@ -35,12 +35,9 @@ class SimpleFooter extends React.Component {
       <>
         <footer className=" footer">
           <Container>
-            <Row className=" row-grid align-items-center mb-5">
+            <Row className=" row-grid align-items-center mb-3 mt-3">
               <Col lg="6">
-                <h3 className=" text-primary font-weight-light mb-2">
-                  Thank you for supporting us!
-                </h3>
-                <h4 className=" mb-0 font-weight-light">
+                <h4 className=" mb-0">
                   Let's get in touch on any of these platforms.
                 </h4>
               </Col>
@@ -48,7 +45,7 @@ class SimpleFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle"
                   color="twitter"
-                  href="https://twitter.com/creativetim"
+                  href="https://twitter.com/TheDivergentCon"
                   id="tooltip475038074"
                   target="_blank"
                 >
@@ -62,7 +59,7 @@ class SimpleFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
-                  href="https://www.facebook.com/creativetim"
+                  href="https://www.facebook.com/thedivergentconsultants/"
                   id="tooltip837440414"
                   target="_blank"
                 >
@@ -75,27 +72,27 @@ class SimpleFooter extends React.Component {
                 </UncontrolledTooltip>
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
-                  color="dribbble"
-                  href="https://dribbble.com/creativetim"
+                  style={{backgroundColor:"#0077B5"}}
+                  href="https://www.linkedin.com/company/the-divergent-consultansts/"
                   id="tooltip829810202"
                   target="_blank"
                 >
-                  <span className="btn-inner--icon">
-                    <i className="fa fa-dribbble" />
+                  <span className="btn-inner--icon" style={{color:"white"}}>
+                    <i className="fa fa-linkedin" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip829810202">
-                  Follow us
+                  Connect
                 </UncontrolledTooltip>
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
-                  color="github"
-                  href="https://github.com/creativetimofficial"
+                  style={{backgroundColor:"#DB3236"}}
+                  href="https://plus.google.com/u/0/101861193682002341015"
                   id="tooltip495507257"
                   target="_blank"
                 >
-                  <span className="btn-inner--icon">
-                    <i className="fa fa-github" />
+                  <span className="btn-inner--icon" style={{color:"white"}}>
+                    <i className="fa fa-google-plus" />
                   </span>
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip495507257">
@@ -109,10 +106,10 @@ class SimpleFooter extends React.Component {
                 <div className=" copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
-                    target="_blank"
+                    href="#"
+                    // target="_blank"
                   >
-                    Creative Tim
+                    ArcReactors
                   </a>
                   .
                 </div>
@@ -121,34 +118,18 @@ class SimpleFooter extends React.Component {
                 <Nav className=" nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
-                    >
-                      Creative Tim
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
-                      target="_blank"
+                      href="#"
+                      // target="_blank"
                     >
                       About Us
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      href="#"
+                      // target="_blank"
                     >
                       Blog
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
-                      target="_blank"
-                    >
-                      MIT License
                     </NavLink>
                   </NavItem>
                 </Nav>

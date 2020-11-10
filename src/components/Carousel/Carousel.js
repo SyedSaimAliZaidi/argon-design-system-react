@@ -1,59 +1,49 @@
-import React, { Component } from 'react';
+/*!
 
-const data = [
-    {
-        id: "1",
-        avatorImg: "/img/avatar-1.png",
-        reviewer: "John Doe",
-        address: "Los Angeles, California",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.",
-        icon_1: "fas fa-star",
-        icon_2: "fas fa-star",
-        icon_3: "fas fa-star",
-        icon_4: "fas fa-star",
-        icon_5: "far fa-star"
-    },
-    {
-        id: "2",
-        avatorImg: "/img/avatar-2.png",
-        reviewer: "Jassica William",
-        address: "Los Angeles, California",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.",
-        icon_1: "fas fa-star",
-        icon_2: "fas fa-star",
-        icon_3: "fas fa-star",
-        icon_4: "fas fa-star",
-        icon_5: "fas fa-star"
-    },
-    {
-        id: "3",
-        avatorImg: "/img/avatar-3.png",
-        reviewer: "Johnson Smith",
-        address: "Los Angeles, California",
-        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.",
-        icon_1: "fas fa-star",
-        icon_2: "fas fa-star",
-        icon_3: "fas fa-star",
-        icon_4: "fas fa-star",
-        icon_5: "far fa-star"
-    }
-]
+=========================================================
+* Argon Design System React - v1.1.0
+=========================================================
 
-class ReviewSection extends Component {
-    render() {
-        return (
-                        <div className="carousel">
-                        {/* Single Testimonial */}
-                        {data.map((item, idx) => {
-                            return(
-                                <div key={`rt_${idx}`} className="carousel-item carousel-fade ">
-                                    <img src={item.avatorImg} className="" alt="" />
-                                </div>
-                            );
-                        })}
-                        </div>
-        );
-    }
+* Product Page: https://www.creative-tim.com/product/argon-design-system-react
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+import React from "react";
+
+// reactstrap components
+import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
+import src1 from "assets/img/theme/img-1-1200x1000.jpg"
+import src2 from "assets/img/theme/img-2-1200x1000.jpg"
+const items = [
+  {
+    src: src1,
+    altText: "",
+    caption: "",
+    header: ""
+  },
+  {
+    src: src2,
+    altText: "",
+    caption: "",
+    header: ""
+  }
+];
+
+class Carousel extends React.Component {
+  render() {
+    return (
+      <>
+              <UncontrolledCarousel items={items} />
+      </>
+    );
+  }
 }
 
-export default ReviewSection;
+export default Carousel;
