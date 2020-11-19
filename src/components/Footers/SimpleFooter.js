@@ -17,6 +17,8 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { Link } from "react-router-dom";
+
 // reactstrap components
 import {
   Button,
@@ -29,12 +31,135 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
+const links = [
+  { 
+    label:'Home',
+    link:"#home", 
+    options: [ 
+      {label: "About Us", link : '#aboutus'}, 
+      {label: "Our Work", link : '#work'}, 
+      {label: "Our Services", link : '#services'}, 
+      {label: "Team", link : '#team'}, 
+      // {label: "Contact Us", link : '#contactus'}, 
+    ] 
+  },
+  {
+    label:'About Us',
+    link:"/profile-page", 
+    options: [ 
+      {label: "Who We Are", link : '/profile-page'}, 
+      {label: "Our Hierarchy", link : '/profile-page'}, 
+      {label: "Our Achievements", link : '/profile-page'}, 
+      {label: "Awards", link : '/profile-page'}, 
+      {label: "", link : ''}, 
+   
+    ]
+  },
+  { 
+    label:'Media',
+    link:"/media", 
+    options: [ 
+      {label: "News", link : '/news'}, 
+      {label: "Announcements", link : '/announcements'}, 
+      {label: "Events", link : '/events'}, 
+      {label: "Gallery", link : '/gallery'}, 
+      {label: "", link : ''}, 
+    ] 
+  },
+
+  // { 
+  //   label:'Work',
+  //   link:"/work", 
+  //   options: [ 
+  //     // {label: "Who We Are", link : '/profile-page'}, 
+  //     // {label: "Our Hierarchy", link : '/profile-page'}, 
+  //     // {label: "Our Achievements", link : '/profile-page'}, 
+  //     // {label: "Awards", link : '/profile-page'}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+  //   ] 
+  // },
+  // { 
+  //   label:'Projects',
+  //   link:"/projects", 
+  //   options: [
+  //     {label: "Current", link : '/projects'}, 
+  //     {label: "Completed", link : '/projects'}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+  //     {label: "", link : ''}, 
+
+  //   ] 
+  // },
+  { 
+    label:'Contact Us',
+    link:"#contactus", 
+    options: [ 
+      {label: "Location: ", link : ' Islamabad, Pakistan.'}, 
+      {label: "Email: ", link : ' info@gmail.com'}, 
+      {label: "Contact Number: ", link : ' +92 300 1234567'}, 
+      {label: "", link : ''}, 
+      {label: "", link : ''}, 
+    ] 
+  },
+  // {label:'Contact Us',link:"/"},
+]
 class SimpleFooter extends React.Component {
   render() {
     return (
       <>
         <footer className=" footer">
           <Container>
+            <Row className=" row-grid align-items-center mb-3 mt-3">
+              {
+                links.map((item,index)=>{
+                  if(item.label==="Contact Us"){
+                    return(
+                      <Col lg="3">
+                        <div className="py-1">
+                          <a style={{color:"#32325D"}} href={item.link}><strong>{item.label}</strong></a>
+                        </div>
+                      
+                        {
+                          item.options.map((option,index)=>{
+                            return(
+                              <div className="py-1">
+                                <a>
+                                  <strong style={{color:"#32325D"}}>{option.label}</strong>{option.link}
+                                </a>
+                              </div>
+                            )
+                          })
+                        }
+                      </Col> 
+                    )
+                  }
+                  else{
+                    return(
+                      <Col lg="2">
+                        <div className="py-1">
+                          <a style={{color:"#32325D"}} href={item.link}><strong>{item.label}</strong></a>
+                        </div>
+                      
+                        {
+                          item.options.map((option,index)=>{
+                            return(
+                              <div className="py-1">
+                                <a style={{color:"#32325D"}} href={option.link}>{option.label}</a>
+                              </div>
+                            )
+                          })
+                        }
+                      </Col> 
+                    )
+                      
+                  }
+                })
+              }
+            </Row>
             <Row className=" row-grid align-items-center mb-3 mt-3">
               <Col lg="6">
                 <h4 className=" mb-0">
@@ -100,9 +225,10 @@ class SimpleFooter extends React.Component {
                 </UncontrolledTooltip>
               </Col>
             </Row>
+          
             <hr />
-            <Row className=" align-items-center justify-content-md-between">
-              <Col md="6">
+            <Row className="justify-content-center text-center">
+              <Col md="6" >
                 <div className=" copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
@@ -114,16 +240,16 @@ class SimpleFooter extends React.Component {
                   .
                 </div>
               </Col>
-              <Col md="6">
-                <Nav className=" nav-footer justify-content-end">
-                  <NavItem>
+              {/* <Col md="6"> */}
+                {/* <Nav className=" nav-footer justify-content-end"> */}
+                  {/* <NavItem>
                     <NavLink
                       href="#"
                       // target="_blank"
                     >
                       About Us
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   {/* <NavItem>
                     <NavLink
                       href="#"
@@ -132,8 +258,8 @@ class SimpleFooter extends React.Component {
                       Blog
                     </NavLink>
                   </NavItem> */}
-                </Nav>
-              </Col>
+                {/* </Nav>
+              </Col> */}
             </Row>
           </Container>
         </footer>

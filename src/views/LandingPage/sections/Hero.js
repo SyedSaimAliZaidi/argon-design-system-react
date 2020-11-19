@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   img1: {
-    height: '400px',
+    height: 'auto',
     display: 'block',
     maxWidth: '100%',
     overflow: 'hidden',
